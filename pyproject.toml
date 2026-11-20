@@ -1,0 +1,19 @@
+[project]
+name = "ajustando-llms"
+version = "0.1.0"
+description = "Classificação de sentimentos em resenhas de livros com BERTimbau"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "datasets>=3.0,<5",
+    "scikit-learn>=1.5,<2",
+    "torch>=2.5,<3",
+    "transformers>=4.46,<5",
+]
+
+[project.scripts]
+ajustando-llms = "ajustando_llms:main"
+
+[build-system]
+requires = ["uv_build>=0.13.8,<0.14.0"]
+build-backend = "uv_build"

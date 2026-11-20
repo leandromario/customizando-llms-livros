@@ -1,0 +1,193 @@
+{
+  "modelo": "neuralmind/bert-base-portuguese-cased",
+  "dataset": "https://linguateca.pt/Repositorio/ReLi/",
+  "configuracao": {
+    "modo": "ambos",
+    "epochs": 3,
+    "batch_size": 8,
+    "max_length": 128,
+    "max_train": 1000,
+    "learning_rate": 2e-05,
+    "seed": 42,
+    "output": "resultados/experimento.json"
+  },
+  "dispositivo": "cuda",
+  "distribuicao": {
+    "train": {
+      "positive": 825,
+      "negative": 175
+    },
+    "validation": {
+      "negative": 45,
+      "positive": 275
+    },
+    "test": {
+      "negative": 32,
+      "positive": 418
+    }
+  },
+  "resultados": [
+    {
+      "modo": "cabeca",
+      "parametros_totais": 108924674,
+      "parametros_treinaveis": 1538,
+      "segundos_treino_e_validacao": 9.020508637000603,
+      "historico": [
+        {
+          "epoca": 1,
+          "loss_medio_por_lote": 0.5963460969924926,
+          "validacao": {
+            "acuracia": 0.85,
+            "f1_macro": 0.6244131455399061,
+            "matriz_confusao_negativo_positivo": [
+              [
+                12,
+                33
+              ],
+              [
+                15,
+                260
+              ]
+            ],
+            "exemplos": 320
+          }
+        },
+        {
+          "epoca": 2,
+          "loss_medio_por_lote": 0.542242635011673,
+          "validacao": {
+            "acuracia": 0.859375,
+            "f1_macro": 0.5799177338895534,
+            "matriz_confusao_negativo_positivo": [
+              [
+                7,
+                38
+              ],
+              [
+                7,
+                268
+              ]
+            ],
+            "exemplos": 320
+          }
+        },
+        {
+          "epoca": 3,
+          "loss_medio_por_lote": 0.5151060726642609,
+          "validacao": {
+            "acuracia": 0.86875,
+            "f1_macro": 0.5444067796610169,
+            "matriz_confusao_negativo_positivo": [
+              [
+                4,
+                41
+              ],
+              [
+                1,
+                274
+              ]
+            ],
+            "exemplos": 320
+          }
+        }
+      ],
+      "teste": {
+        "acuracia": 0.9177777777777778,
+        "f1_macro": 0.5272438172577302,
+        "matriz_confusao_negativo_positivo": [
+          [
+            2,
+            30
+          ],
+          [
+            7,
+            411
+          ]
+        ],
+        "exemplos": 450
+      },
+      "pico_memoria_gpu_mib": 450.3
+    },
+    {
+      "modo": "completo",
+      "parametros_totais": 108924674,
+      "parametros_treinaveis": 108924674,
+      "segundos_treino_e_validacao": 39.1365860779988,
+      "historico": [
+        {
+          "epoca": 1,
+          "loss_medio_por_lote": 0.3588613829612732,
+          "validacao": {
+            "acuracia": 0.9125,
+            "f1_macro": 0.836722793206502,
+            "matriz_confusao_negativo_positivo": [
+              [
+                37,
+                8
+              ],
+              [
+                20,
+                255
+              ]
+            ],
+            "exemplos": 320
+          }
+        },
+        {
+          "epoca": 2,
+          "loss_medio_por_lote": 0.13170284064859153,
+          "validacao": {
+            "acuracia": 0.953125,
+            "f1_macro": 0.9002307164681673,
+            "matriz_confusao_negativo_positivo": [
+              [
+                36,
+                9
+              ],
+              [
+                6,
+                269
+              ]
+            ],
+            "exemplos": 320
+          }
+        },
+        {
+          "epoca": 3,
+          "loss_medio_por_lote": 0.05917312599346042,
+          "validacao": {
+            "acuracia": 0.940625,
+            "f1_macro": 0.8684865133784689,
+            "matriz_confusao_negativo_positivo": [
+              [
+                32,
+                13
+              ],
+              [
+                6,
+                269
+              ]
+            ],
+            "exemplos": 320
+          }
+        }
+      ],
+      "teste": {
+        "acuracia": 0.9622222222222222,
+        "f1_macro": 0.8665829540103595,
+        "matriz_confusao_negativo_positivo": [
+          [
+            26,
+            6
+          ],
+          [
+            11,
+            407
+          ]
+        ],
+        "exemplos": 450
+      },
+      "pico_memoria_gpu_mib": 2103.3
+    }
+  ]
+}
